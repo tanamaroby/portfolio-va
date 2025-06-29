@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -11,31 +11,37 @@ const navItems = [
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
-]
+];
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md border-b" : "bg-transparent"
+        scrolled || isOpen
+          ? "bg-background/80 backdrop-blur-md border-b"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-2xl font-bold text-primary">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-2xl font-bold text-primary"
+          >
             Roby Tanama
           </motion.div>
 
@@ -57,7 +63,11 @@ export function Navigation() {
 
           {/* Mobile Navigation Toggle */}
           <div className="md:hidden">
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(!isOpen)}
+            >
               {isOpen ? <X /> : <Menu />}
             </Button>
           </div>
@@ -85,5 +95,5 @@ export function Navigation() {
         )}
       </div>
     </motion.nav>
-  )
+  );
 }
