@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Github, Twitter, Instagram, Linkedin } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
 
 const socialLinks = [
   {
@@ -34,7 +34,7 @@ const socialLinks = [
     href: "#",
     color: "hover:text-pink-600",
   },
-]
+];
 
 export function SocialSection() {
   return (
@@ -48,7 +48,8 @@ export function SocialSection() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Follow me on social media to stay updated with my latest projects, insights, and professional journey.
+            Follow me on social media to stay updated with my latest projects,
+            insights, and professional journey.
           </p>
         </motion.div>
 
@@ -61,31 +62,43 @@ export function SocialSection() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
+              <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer w-full h-full flex flex-col justify-between">
                 <CardContent className="p-6 text-center">
-                  <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} className="mb-4">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="mb-4"
+                  >
                     <social.icon
                       className={`h-12 w-12 mx-auto text-muted-foreground transition-colors duration-300 ${social.color}`}
                     />
                   </motion.div>
                   <h3 className="font-semibold text-lg mb-2">{social.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{social.description}</p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {social.description}
+                  </p>
+                </CardContent>
+                <CardFooter>
                   <Button
                     variant="outline"
                     size="sm"
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300 bg-transparent"
                     asChild
                   >
-                    <a href={social.href} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Follow
                     </a>
                   </Button>
-                </CardContent>
+                </CardFooter>
               </Card>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
