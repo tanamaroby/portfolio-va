@@ -1,32 +1,32 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { motion } from "framer-motion";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 
 const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "roby@trietech.com",
-    href: "mailto:roby@trietech.com",
+    value: "tanamaroby@gmail.com",
+    href: "mailto:tanamaroby@gmail.com.com",
   },
   {
     icon: Phone,
     title: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+65 8816 5011",
+    href: "tel:+6588165011",
   },
   {
     icon: MapPin,
     title: "Location",
     value: "Singapore",
-    href: "#",
+    href: "https://en.wikipedia.org/wiki/Singapore",
   },
-]
+];
 
 export function ContactSection() {
   return (
@@ -40,8 +40,8 @@ export function ContactSection() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            I'm always open to discussing new opportunities, interesting projects, or just having a chat about
-            technology and innovation.
+            I'm always open to discussing new opportunities, interesting
+            projects, or just having a chat about technology and innovation.
           </p>
         </motion.div>
 
@@ -56,8 +56,9 @@ export function ContactSection() {
             <div>
               <h3 className="text-2xl font-semibold mb-6">Let's Talk</h3>
               <p className="text-muted-foreground mb-8">
-                Whether you're looking for a technology leader, want to collaborate on a project, or just want to
-                connect, I'd love to hear from you.
+                Whether you're looking for a technology leader, want to
+                collaborate on a project, or just want to connect, I'd love to
+                hear from you.
               </p>
             </div>
 
@@ -94,7 +95,11 @@ export function ContactSection() {
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
             <Card>
               <CardHeader>
                 <CardTitle>Send a Message</CardTitle>
@@ -103,31 +108,51 @@ export function ContactSection() {
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium mb-2">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium mb-2"
+                      >
                         Name
                       </label>
                       <Input id="name" placeholder="Your name" />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium mb-2">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium mb-2"
+                      >
                         Email
                       </label>
-                      <Input id="email" type="email" placeholder="your@email.com" />
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="your@email.com"
+                      />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-medium mb-2"
+                    >
                       Subject
                     </label>
                     <Input id="subject" placeholder="What's this about?" />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium mb-2"
+                    >
                       Message
                     </label>
-                    <Textarea id="message" placeholder="Tell me about your project or just say hello!" rows={6} />
+                    <Textarea
+                      id="message"
+                      placeholder="Tell me about your project or just say hello!"
+                      rows={6}
+                    />
                   </div>
 
                   <Button type="submit" className="w-full">
@@ -141,5 +166,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
