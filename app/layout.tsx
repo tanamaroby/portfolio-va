@@ -1,20 +1,26 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import { cn } from "@/lib/utils";
+import type { Metadata } from "next";
+import { Lato } from "next/font/google";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
-}
+  title: "Roby Tanama Portfolio",
+  description: "Website containing my work and skillsets.",
+};
+
+const font = Lato({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={cn(font.className, "dark antialiased")}>{children}</body>
     </html>
-  )
+  );
 }
