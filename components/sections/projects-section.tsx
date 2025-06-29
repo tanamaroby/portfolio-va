@@ -13,7 +13,7 @@ const projects = [
     title: "Enterprise SaaS Platform",
     description:
       "A comprehensive SaaS platform serving 10,000+ businesses with real-time analytics, automated workflows, and multi-tenant architecture.",
-    image: "/saas.png?height=350&width=500",
+    image: "/saas.png",
     technologies: ["React", "Node.js", "PostgreSQL", "AWS", "Docker"],
     features: [
       "Real-time Analytics",
@@ -28,7 +28,7 @@ const projects = [
     title: "AI-Powered Analytics Dashboard",
     description:
       "Machine learning-driven dashboard providing predictive insights and automated reporting for business intelligence.",
-    image: "/ai.png?height=350&width=500",
+    image: "/ai.png",
     technologies: ["TypeScript", "Python", "TensorFlow", "React", "FastAPI"],
     features: [
       "Predictive Analytics",
@@ -43,7 +43,7 @@ const projects = [
     title: "Mobile-First E-commerce Platform",
     description:
       "High-performance e-commerce platform with mobile-first design, supporting millions of transactions.",
-    image: "/mobile.png?height=350&width=500",
+    image: "/mobile.png",
     technologies: ["Next.js", "Stripe", "MongoDB", "Redis", "Vercel"],
     features: [
       "Payment Integration",
@@ -58,7 +58,7 @@ const projects = [
     title: "Real-time Collaboration Tool",
     description:
       "WebRTC-based collaboration platform enabling real-time document editing, video calls, and team communication.",
-    image: "/realtime.png?height=350&width=500",
+    image: "/realtime.png",
     technologies: ["Vue.js", "Socket.io", "WebRTC", "Express.js", "MySQL"],
     features: [
       "Real-time Editing",
